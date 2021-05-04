@@ -21,8 +21,15 @@ class ReservationFactory extends Factory
      */
     public function definition()
     {
+        $startingDate = $this->faker->dateTimeBetween('this week', '+6 months');
+    $endingDate   =  $this->faker->dateTimeBetween($startingDate, strtotime('+6 months'));
+
         return [
             //
+            'user_id' => \App\Models\User::factory(),
+            'chambre_id' => \App\Models\Chambre::factory(),
+            'date_debut' => $startingDate,
+            'date_fin' => $endingDate,
         ];
     }
 }

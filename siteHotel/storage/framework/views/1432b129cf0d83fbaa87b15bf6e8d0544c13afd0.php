@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="<?php echo e(str_replace('_', '-', app()->getLocale())); ?>">
 
 <head>
     <meta charset="utf-8">
@@ -26,36 +26,36 @@
     <!-- Navigation Bar -->
     <div class="w3-bar w3-white w3-large">
         <div class="relative flex items-top bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
+            <?php if(Route::has('login')): ?>
                 <div class="hidden fixed top-0 left-0 sm:block">
                     <a href="/" class="w3-bar-item w3-button w3-red w3-mobile">
                         <i class="fa fa-bed w3-margin-right"></i>Accueil</a>
-                    {{-- <a href="/reserve" class="w3-bar-item w3-button w3-mobile">Réserver</a> --}}
+                    
                     <a href="/contact" class="w3-bar-item w3-button w3-mobile">Contact</a>
                     <div class="hidden fixed top-0 right-0 sm:block">
-                        @auth
-                            <a href="{{ url('/home') }}" class="w3-bar-item w3-button w3-mobile">Administration</a>
-                        @else
-                            <a href="{{ route('login') }}" class="w3-bar-item w3-button w3-mobile">Log in</a>
+                        <?php if(auth()->guard()->check()): ?>
+                            <a href="<?php echo e(url('/home')); ?>" class="w3-bar-item w3-button w3-mobile">Administration</a>
+                        <?php else: ?>
+                            <a href="<?php echo e(route('login')); ?>" class="w3-bar-item w3-button w3-mobile">Log in</a>
 
-                            @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="w3-bar-item w3-button w3-mobile">Register</a>
-                            @endif
-                        @endauth
+                            <?php if(Route::has('register')): ?>
+                                <a href="<?php echo e(route('register')); ?>" class="w3-bar-item w3-button w3-mobile">Register</a>
+                            <?php endif; ?>
+                        <?php endif; ?>
                     </div>
-            @endif
+            <?php endif; ?>
         </div>
         <div class="w3-bar w3-white w3-large w3-padding-32">
 
         </div>
     </div>
     <div class="">
-        @yield('content')
+        <?php echo $__env->yieldContent('content'); ?>
     </div>
 
 
     <!-- Footer -->
-    {{-- <footer class="w3-padding-32 w3-black w3-center w3-display-bottommiddle"> --}}
+    
     <footer class="w3-container w3-center w3-black footer">
         <h5>Find Us On</h5>
         <div class="w3-xlarge w3-padding-16">
@@ -100,3 +100,4 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
 </body>
 
 </html>
+<?php /**PATH /home/sebastien/projetfinAnnee/hotel/siteHotel/resources/views/welcome.blade.php ENDPATH**/ ?>

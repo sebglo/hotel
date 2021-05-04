@@ -13,9 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+use App\Http\Controllers\PagesController;
+Route::get('/', [PagesController::class, 'index']);
+Route::get('/reserve', [PagesController::class, 'reserve']);
+Route::get('/contact', [PagesController::class, 'contact']);
+Route::get('/single', [PagesController::class, 'single']);
+
 
 Auth::routes();
 

@@ -23,6 +23,11 @@ class ChambreFactory extends Factory
     {
         return [
             //
+            'taille' => $this->faker->numberBetween(20,100),
+            'nombre_de_lit' => $this->faker->numberBetween(1,8),
+            'type_de_lit' => $this->faker->randomElement(['simple', 'double']),
+            'balcon' => $this->faker->randomElement(['avec', 'sans']),
+
         ];
     }
 }

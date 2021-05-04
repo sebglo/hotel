@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Chambre extends Model
 {
     use HasFactory;
+
+    //protected $table = 'chambres';
+
+    protected $fillable = [
+        'taille','nombre_de_lit', 'type_de_lit', 'balcon'
+    ];
+
+    public function reservations()
+    {
+        return $this->hasMany(Reservation::class,'chambre_id');
+    }
+
 }

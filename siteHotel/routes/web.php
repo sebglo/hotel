@@ -20,15 +20,20 @@ Route::get('/reserve', [PagesController::class, 'reserve']);
 Route::get('/contact', [PagesController::class, 'contact']);
 Route::get('/single', [PagesController::class, 'single']);
 
+use App\Http\Controllers\ChambreController;
+Route::resource('layouts', ChambreController::class);
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
+<<<<<<< HEAD
 use App\Http\Controllers\ReservationController;
 Route::resource('/reservation', ReservationController::class);
 
 
 use App\Http\Controllers\ChambreController;
 Route::resource('/chambre', ChambreController::class);
+=======
+>>>>>>> f42003f829f8fb1ecdee059928ed11d2549eaa56

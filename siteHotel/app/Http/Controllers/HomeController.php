@@ -23,6 +23,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('layouts.home');
+        /* return view('layouts.home'); */
+        $chambres = \App\Models\Chambre::all();//latest()->paginate(5);
+
+        //return view('layouts/home', compact('chambres'))
+            //->with('i', (request()->input('page', 1) - 1) * 5)
+            //;
+
+            return view('layouts.home',array(
+                'chambres' => $chambres
+            ));
     }
 }

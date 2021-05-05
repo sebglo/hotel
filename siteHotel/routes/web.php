@@ -24,3 +24,11 @@ Route::get('/single', [PagesController::class, 'single']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+use App\Http\Controllers\ReservationController;
+Route::resource('/reservation', ReservationController::class);
+
+
+use App\Http\Controllers\ChambreController;
+Route::resource('/chambre', ChambreController::class);

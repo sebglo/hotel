@@ -3,13 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Chambre;
 
 class PagesController extends Controller
 {
     //
     public function index()
     {
-        return view('LayoutPublic.listSimple');
+        $chambres = Chambre::all();
+
+        return view(
+            'LayoutPublic.listSimple',
+            [
+                'chambres' => $chambres
+            ]
+        );
     }
 
     public function contact()

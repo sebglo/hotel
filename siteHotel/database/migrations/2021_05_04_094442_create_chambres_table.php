@@ -16,6 +16,7 @@ class CreateChambresTable extends Migration
         Schema::create('chambres', function (Blueprint $table) {
             $table->id();
             $table->integer('taille');
+            $table->integer('prix');
             $table->integer('nombre_de_lit');
             $table->text('type_de_lit');
             $table->text('balcon');

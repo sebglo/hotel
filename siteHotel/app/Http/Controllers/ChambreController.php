@@ -47,6 +47,11 @@ class ChambreController extends Controller
     public function show(Chambre $chambre)
     {
         //
+
+        /* return view('LayoutPublic.singleRoom',
+        [
+            'single' => $chambre
+        ]); */
     }
 
     /**

@@ -6,3 +6,94 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+
+h1 {
+    text-align:center;
+    margin:50px auto;
+  }
+  .success {
+    text-align:center;
+    background: lightgreen;
+    border: 1px solid #000;
+    padding: 30px;
+  }
+  .error {
+    /* text-align:center; */
+    background: pink;
+    border: 1px solid red;
+    padding: 5px;
+    margin: 10px auto;
+  }
+  .recipe-title {
+    text-align:center;
+    margin: 50px auto;
+    text-transform: uppercase;
+    font-size:24px;
+  }
+  .recipe-content{
+    background: lightgrey;
+    border: 1px solid #000;
+    padding: 30px;
+  }
+  .author {
+    margin-top:30px;
+    float: right;
+    color: blue;
+  }
+  form {
+    button {
+      text-align:center;
+      background: lightgrey;
+      border: 1px solid #000;
+      padding: 5px;
+      margin: 10px auto;
+    }
+  }
+  .add {
+    float:right;
+  }
+  .recipe-list {
+    @include make-row();
+  }
+  .recipe-ticket {
+    @include make-col-ready();
+
+    @include media-breakpoint-up(sm) {
+      @include make-col(6);
+    }
+    @include media-breakpoint-up(lg) {
+      @include make-col(3);
+    }
+    margin-bottom:30px;
+    .recipe-ticket-inside {
+      background-color: lightgrey;
+      border:2px solid #d7ecfa;
+      border-radius: 5px;
+      padding:20px;
+    }
+    .recipe-ticket-image {
+      text-align:center;
+      img{
+        width:100%;
+      }
+    }
+    .recipe-ticket-title {
+      margin: 30px auto;
+      font-size: 20px;
+      text-transform: uppercase;
+      height: 100px;
+    }
+    .recipe-ticket-content {
+      margin: 30px auto;
+      height: 110px;
+    }
+    .recipe-ticket-author {
+      text-align:right;
+      font-style: italic;
+      // padding-bottom:30px;
+      span {
+        font-weight: bold;
+      }
+    }
+  }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Reservation;
 use Illuminate\Http\Request;
+use App\Models\Chambre;
 
 class ReservationController extends Controller
 {
@@ -15,6 +16,7 @@ class ReservationController extends Controller
     public function index()
     {
         //
+
     }
 
     /**
@@ -47,6 +49,11 @@ class ReservationController extends Controller
     public function show(Reservation $reservation)
     {
         //
+       /*  $chambre = Chambre::where('id', $reservation)->first();
+        return view('LayoutPublic.singleRoom',
+       [
+           'single' => $chambre
+       ]); */
     }
 
     /**

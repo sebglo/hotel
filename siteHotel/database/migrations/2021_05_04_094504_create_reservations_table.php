@@ -17,6 +17,7 @@ class CreateReservationsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('chambre_id');
+            $table->integer('nombre_de_personne');
             $table->date('date_debut');
             $table->date('date_fin');
 

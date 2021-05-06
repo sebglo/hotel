@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
 use App\Models\Chambre;
+use Illuminate\Support\Facades\Auth;
 
 class ReservationController extends Controller
 {
@@ -16,7 +17,7 @@ class ReservationController extends Controller
     public function index()
     {
         //
-        
+
 
     }
 
@@ -39,6 +40,33 @@ class ReservationController extends Controller
     public function store(Request $request)
     {
         //
+       // $id = Auth::id();
+
+
+    Auth::user();
+    $reservation =  new Reservation();
+    $reservation -> user_id=Auth::user()->id;
+    $reservation -> chambre_id=$request->get('chambre_id');
+    $reservation -> date_debut=$request->get('date_debut');
+    $reservation -> date_fin=$request->get('date_fin');
+    $reservation -> nombre_de_personne=$request->get('nombre_de_personne');
+
+    $reservation->save();
+
+     /*    Reservation::create(request()->validate([
+            'user_id' => $id,
+            'chambre_id' => 'required',
+            'date_debut' => 'required',
+            'date_fin' => 'required',
+            'nombre_de_personne' => 'required',
+
+        ])); */
+
+
+return redirect('/home');
+
+
+
     }
 
     /**

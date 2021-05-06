@@ -17,7 +17,7 @@
     <!-- Styles -->
     <style>
 
-
+.box { display: inline; width: 100px; }
     </style>
 </head>
 

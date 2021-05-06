@@ -4,32 +4,47 @@
 
 
     <div class="w3-content" style="max-width:1532px;">
-        <div class="container">
+        <div class="w3-row-padding w3-section w3-stretch">
+            <ul class="flex">
+                <table>
+                    <?php $__currentLoopData = $chambres; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $chambre): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <tr class="">
+                            <div class="">
+                                <div class="w3-row-padding w3-padding-16">
+                                    <div class=" w3-margin-bottom">
+                                        <img src="../../images/room_single.jpg" alt="Norway" style="width:100%">
+                                        <h3> <?php echo e($chambre->prix); ?> $ </h3>
+                                        <h6 class="w3-opacity"> <?php echo e($chambre->nombre_de_lit); ?> lits</h6>
 
-            <?php $__currentLoopData = $chambres; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $chambre): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <div class="container row flex-wrap">
-                    <div class="col-md-3">
-                        <div class="w3-row-padding w3-padding-16">
-                            <div class="w3-third w3-margin-bottom">
-                                <img src="../../images/room_single.jpg" alt="Norway" style="width:100%">
-                                <h3> <?php echo e($chambre->prix); ?> $ </h3>
-                                <h6 class="w3-opacity"> <?php echo e($chambre->nombre_de_lit); ?> lits</h6>
-
-                                <p> <?php echo e($chambre->taille); ?> <sup>m2</sup></p>
-                                <p class="w3-large"><i class="fa fa-bath"></i> <i class="fa fa-phone"></i> <i
-                                        class="fa fa-wifi"></i>
-                                </p>
-                                
-                                <a href="<?php echo e(URL::to('home/' . $chambre->id)); ?>">
-                                    <button class="w3-button w3-block w3-black w3-margin-bottom">Reserver</button>
-                                </a>
+                                        <p> <?php echo e($chambre->taille); ?> <sup>m2</sup></p>
+                                        <p class="w3-large"><i class="fa fa-bath"></i> <i class="fa fa-phone"></i> <i
+                                                class="fa fa-wifi"></i>
+                                        </p>
+                                        
+                                        <a href="<?php echo e(URL::to('home/' . $chambre->id)); ?>">
+                                            <button class="w3-button w3-block w3-black w3-margin-bottom">Reserver</button>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
+                        </tr>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                </table>
+            </ul>
         </div>
+
+
+        
+
+
+        
+
+        
+
+        
+        
+        
+
 
         
 

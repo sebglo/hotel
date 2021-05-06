@@ -40,20 +40,20 @@ class ReservationController extends Controller
     public function store(Request $request)
     {
         //
-       // $id = Auth::id();
+        // $id = Auth::id();
+        if (auth()->check()) {
 
+            Auth::user();
+            $reservation =  new Reservation();
+            $reservation->user_id = Auth::user()->id;
+            $reservation->chambre_id = $request->get('chambre_id');
+            $reservation->date_debut = $request->get('date_debut');
+            $reservation->date_fin = $request->get('date_fin');
+            $reservation->nombre_de_personne = $request->get('nombre_de_personne');
 
-    Auth::user();
-    $reservation =  new Reservation();
-    $reservation -> user_id=Auth::user()->id;
-    $reservation -> chambre_id=$request->get('chambre_id');
-    $reservation -> date_debut=$request->get('date_debut');
-    $reservation -> date_fin=$request->get('date_fin');
-    $reservation -> nombre_de_personne=$request->get('nombre_de_personne');
+            $reservation->save();
 
-    $reservation->save();
-
-     /*    Reservation::create(request()->validate([
+            /*    Reservation::create(request()->validate([
             'user_id' => $id,
             'chambre_id' => 'required',
             'date_debut' => 'required',
@@ -63,10 +63,10 @@ class ReservationController extends Controller
         ])); */
 
 
-return redirect('/home');
+            return redirect('/home');
+        }
 
-
-
+        return view('auth.login');
     }
 
     /**
@@ -77,7 +77,6 @@ return redirect('/home');
      */
     public function show(Reservation $reservation)
     {
-
     }
 
     /**

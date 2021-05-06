@@ -12,7 +12,7 @@
 </div>
 
 <div class="container w3-padding-16">
-    <a class="w3-bar-item w3-button w3-red w3-mobile" href="<?php echo e(route('layouts.create')); ?>">Entrer une nouvelle chambre</a><br>
+    <a class="w3-bar-item w3-button w3-red w3-mobile" href="<?php echo e(route('chambre.create')); ?>">Entrer une nouvelle chambre</a><br>
 </div>
 
 <div class="container">
@@ -38,8 +38,8 @@
         <td class="w3-padding-16 w3-border"><?php echo e($chambre->type_de_lit); ?></td>
         <td class="w3-padding-16 w3-border"><?php echo e($chambre->balcon); ?></td>
         <td class="w3-padding-16 w3-border">
-        <form action="<?php echo e(route('layouts.destroy',$chambre->id)); ?>" method="POST">
-        <a class="w3-bar-item w3-button w3-grey w3-mobile" href="<?php echo e(route('layouts.edit',$chambre->id)); ?>">Edit</a>
+        <form action="<?php echo e(route('chambre.destroy',$chambre->id)); ?>" method="POST">
+        <a class="w3-bar-item w3-button w3-grey w3-mobile" href="<?php echo e(route('chambre.edit',$chambre->id)); ?>">Edit</a>
         <?php echo csrf_field(); ?>
         <?php echo method_field('DELETE'); ?>
         <button type="submit" class="w3-bar-item w3-button w3-grey w3-mobile">Delete</button>

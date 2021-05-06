@@ -22,7 +22,7 @@
 </div>
 
 <div class="container w3-padding-16">
-    <a class="w3-bar-item w3-button w3-red w3-mobile" href="{{ route('layouts.create') }}">Entrer une nouvelle chambre</a><br>
+    <a class="w3-bar-item w3-button w3-red w3-mobile" href="{{ route('chambre.create') }}">Entrer une nouvelle chambre</a><br>
 </div>
 
 <div class="container">
@@ -49,8 +49,8 @@
         <td class="w3-padding-16 w3-border">{{ $chambre->type_de_lit }}</td>
         <td class="w3-padding-16 w3-border">{{ $chambre->balcon }}</td>
         <td class="w3-padding-16 w3-border">
-        <form action="{{ route('layouts.destroy',$chambre->id) }}" method="POST">
-        <a class="w3-bar-item w3-button w3-grey w3-mobile" href="{{ route('layouts.edit',$chambre->id) }}">Edit</a>
+        <form action="{{ route('chambre.destroy',$chambre->id) }}" method="POST">
+        <a class="w3-bar-item w3-button w3-grey w3-mobile" href="{{ route('chambre.edit',$chambre->id) }}">Edit</a>
         @csrf
         @method('DELETE')
         <button type="submit" class="w3-bar-item w3-button w3-grey w3-mobile">Delete</button>

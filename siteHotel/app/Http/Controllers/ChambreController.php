@@ -63,7 +63,7 @@ class ChambreController extends Controller
 
         Chambre::create($request->all());
 
-        return redirect()->route('layouts.index')
+        return redirect()->route('chambre.index')
             ->with('success', 'chambre created successfully.');
     }
 
@@ -93,6 +93,7 @@ class ChambreController extends Controller
     {
         //
         //print_r($chambre); die;
+        //dd($chambre->id);
         return view('layouts.edit', compact('chambre'));
         //return view('layouts.edit');
     }
@@ -117,7 +118,7 @@ class ChambreController extends Controller
 
         $chambre->update($request->all());
 
-        return redirect()->route('layouts.index')
+        return redirect()->route('chambre.index')
             ->with('success', 'chambre updated successfully');
     }
 
@@ -132,7 +133,7 @@ class ChambreController extends Controller
         //
         $chambre->delete();
 
-        return redirect()->route('layouts.index')
+        return redirect()->route('chambre.index')
             ->with('success', 'chambre deleted successfully');
     }
 }

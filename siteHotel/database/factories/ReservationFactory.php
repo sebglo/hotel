@@ -28,6 +28,7 @@ class ReservationFactory extends Factory
             //
             'user_id' => \App\Models\User::factory(),
             'chambre_id' => \App\Models\Chambre::factory(),
+            'nombre_de_personne' => $this->faker->randomDigit(1,15),
             'date_debut' => $startingDate,
             'date_fin' => $endingDate,
         ];

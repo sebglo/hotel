@@ -16,8 +16,11 @@
 
     <!-- Styles -->
     <style>
+        .box {
+            display: inline;
+            width: 100px;
+        }
 
-.box { display: inline; width: 100px; }
     </style>
 </head>
 
@@ -52,6 +55,7 @@
     </div>
 
 
+
     <!-- Footer -->
     
     
@@ -77,6 +81,32 @@
 
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap">
+    </script>
+
+
+
+    <script>
+        var unirest = require("unirest");
+
+        var req = unirest("GET", "https://devru-latitude-longitude-find-v1.p.rapidapi.com/latlon.php");
+
+        req.query({
+            "location": "chicago"
+        });
+
+        req.headers({
+            "x-rapidapi-key": "742028b9e1msh204dd2a3f81e614p1b2fc3jsn7797045b3557",
+            "x-rapidapi-host": "devru-latitude-longitude-find-v1.p.rapidapi.com",
+            "useQueryString": true
+        });
+
+
+        req.end(function(res) {
+            if (res.error) throw new Error(res.error);
+
+            console.log(res.body);
+        });
+
     </script>
     <!--
 To use this code on your website, get a free API key from Google.

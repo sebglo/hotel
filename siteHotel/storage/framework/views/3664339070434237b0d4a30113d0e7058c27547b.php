@@ -54,10 +54,44 @@
             <div class="w3-third"><i class="fa fa-envelope w3-text-red"></i> Email: mail@mail.com</div>
         </div>
 
-        <div class="w3-panel w3-red w3-leftbar w3-padding-32">
-            <h6><i class="fa fa-info w3-deep-orange w3-padding w3-margin-right"></i> On demand, we can offer
-                playstation, babycall, children care, dog equipment, etc.</h6>
+        
+        <div class="">
+            <div id="map"></div>
+
         </div>
+        
+        <div id="infoposition"></div>
+
+
+        <div class="w3-panel w3-red w3-leftbar w3-padding-32">
+            <h6><i class="fa fa-info w3-deep-orange w3-padding w3-margin-right"></i> Emplacement pour les futures publicités
+            </h6>
+        </div>
+
+        
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=set_to_true_or_false"></script>
+
+        
+        <script>
+            // Position par défaut (Châtelet à Paris)
+            var centerpos = new google.maps.LatLng(48.579400, 7.7519);
+
+            // Options relatives à la carte
+            var optionsGmaps = {
+                center: centerpos,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                zoom: 15
+            };
+            // ROADMAP peut être remplacé par SATELLITE, HYBRID ou TERRAIN
+            // Zoom : 0 = terre entière, 19 = au niveau de la rue
+
+            // Initialisation de la carte pour l'élément portant l'id "map"
+            var map = new google.maps.Map(document.getElementById("map"), optionsGmaps);
+
+            // .. et la variable qui va stocker les coordonnées
+            var latlng;
+
+        </script>
 
 
 

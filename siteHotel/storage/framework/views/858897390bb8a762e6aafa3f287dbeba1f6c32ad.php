@@ -1,4 +1,5 @@
 <?php $__env->startSection('content'); ?>
+
     <div class="row">
         <div class="col-lg-2">
             
@@ -75,6 +76,7 @@
             
         </div>
     </div>
+
 
 <?php $__env->stopSection(); ?>
 

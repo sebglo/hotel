@@ -34,7 +34,7 @@
                     <a href="/contact" class="w3-bar-item w3-button w3-mobile">Contact</a>
                     <div class="hidden fixed top-0 right-0 sm:block">
                         <?php if(auth()->guard()->check()): ?>
-                            <a href="<?php echo e(url('/home')); ?>" class="w3-bar-item w3-button w3-mobile">Administration</a>
+                            <a href="<?php echo e(url('/admin')); ?>" class="w3-bar-item w3-button w3-mobile">Administration</a>
                         <?php else: ?>
                             <a href="<?php echo e(route('login')); ?>" class="w3-bar-item w3-button w3-mobile">Log in</a>
 

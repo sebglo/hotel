@@ -25839,3 +25839,15 @@
 #25 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle()
 #26 {main}
 "} 
+[2021-05-06 11:47:52] local.ERROR: Class 'Collective\Html\HtmlServiceProvider' not found {"exception":"[object] (Error(code: 0): Class 'Collective\\Html\\HtmlServiceProvider' not found at /home/sebastien/projetfinAnnee/hotel/siteHotel/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php:208)
+[stacktrace]
+#0 /home/sebastien/projetfinAnnee/hotel/siteHotel/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(144): Illuminate\\Foundation\\ProviderRepository->createProvider()
+#1 /home/sebastien/projetfinAnnee/hotel/siteHotel/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php(61): Illuminate\\Foundation\\ProviderRepository->compileManifest()
+#2 /home/sebastien/projetfinAnnee/hotel/siteHotel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(649): Illuminate\\Foundation\\ProviderRepository->load()
+#3 /home/sebastien/projetfinAnnee/hotel/siteHotel/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 /home/sebastien/projetfinAnnee/hotel/siteHotel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(237): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap()
+#5 /home/sebastien/projetfinAnnee/hotel/siteHotel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(310): Illuminate\\Foundation\\Application->bootstrapWith()
+#6 /home/sebastien/projetfinAnnee/hotel/siteHotel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 /home/sebastien/projetfinAnnee/hotel/siteHotel/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#8 {main}
+"} 

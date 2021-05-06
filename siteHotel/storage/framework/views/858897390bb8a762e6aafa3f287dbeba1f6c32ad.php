@@ -11,7 +11,7 @@
                         <h2>Creation d'une chambre</h2>
                     </div>
                     <div class="pull-right">
-                        <a class="w3-bar-item w3-button w3-grey w3-mobile" href="<?php echo e(route('chambre.index')); ?>"> Back</a>
+                        <a class="w3-bar-item w3-button w3-grey w3-mobile" href="<?php echo e(route('chambre.index')); ?>"> Retour</a>
                     </div>
                 </div>
             </div>
@@ -66,7 +66,7 @@
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                        <button class="w3-bar-item w3-button w3-grey w3-mobile" type="submit" class="btn btn-primary">Submit</button>
+                        <button class="w3-bar-item w3-button w3-grey w3-mobile" type="submit" class="btn btn-primary">Valider</button>
                     </div>
                 </div>
             </form>

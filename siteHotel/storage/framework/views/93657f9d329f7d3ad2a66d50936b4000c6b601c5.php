@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-lg-12 margin-tb">
                     <div class="pull-left">
-                        <h2>Creation d'une chambre</h2>
+                        <h2>Modification d'une chambre</h2>
                     </div>
                     <div class="pull-right">
                         <a class="w3-bar-item w3-button w3-grey w3-mobile" href="<?php echo e(route('chambre.index')); ?>"> Retour</a>

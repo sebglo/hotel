@@ -11,15 +11,16 @@
     </div>
 </div>
 
-<div class="container">
-    <a class="w3-bar-item w3-button w3-red w3-mobile" href="">Entrer une nouvelle chambre</a>
+<div class="container w3-padding-16">
+    <a class="w3-bar-item w3-button w3-red w3-mobile" href="<?php echo e(route('layouts.create')); ?>">Entrer une nouvelle chambre</a><br>
 </div>
 
 <div class="container">
 
     <table class="table table-bordered">
-        <tr>
+        <tr class="w3-bar-item w3-red">
         <th>No</th>
+        <th>Prix</th>
         <th>taille</th>
         <th>nbx de lit</th>
         <th>type de lit</th>
@@ -30,18 +31,18 @@
         <?php $__currentLoopData = $chambres; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $chambre): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         
         <tr>
-        <td><?php echo e($chambre->id); ?></td>
-        <td><?php echo e($chambre->taille); ?></td>
-        <td><?php echo e($chambre->nombre_de_lit); ?></td>
-        <td><?php echo e($chambre->type_de_lit); ?></td>
-        <td><?php echo e($chambre->balcon); ?></td>
-        <td>
+        <td class="w3-padding-16 w3-border"><?php echo e($chambre->id); ?></td>
+        <td class="w3-padding-16 w3-border"><?php echo e($chambre->prix); ?></td>
+        <td class="w3-padding-16 w3-border"><?php echo e($chambre->taille); ?></td>
+        <td class="w3-padding-16 w3-border"><?php echo e($chambre->nombre_de_lit); ?></td>
+        <td class="w3-padding-16 w3-border"><?php echo e($chambre->type_de_lit); ?></td>
+        <td class="w3-padding-16 w3-border"><?php echo e($chambre->balcon); ?></td>
+        <td class="w3-padding-16 w3-border">
         <form action="<?php echo e(route('layouts.destroy',$chambre->id)); ?>" method="POST">
-        <a class="btn btn-info" href="<?php echo e(route('layouts.show',$chambre->id)); ?>">Show</a>
-        <a class="btn btn-primary" href="<?php echo e(route('layouts.edit',$chambre->id)); ?>">Edit</a>
+        <a class="w3-bar-item w3-button w3-grey w3-mobile" href="<?php echo e(route('layouts.edit',$chambre->id)); ?>">Edit</a>
         <?php echo csrf_field(); ?>
         <?php echo method_field('DELETE'); ?>
-        <button type="submit" class="btn btn-danger">Delete</button>
+        <button type="submit" class="w3-bar-item w3-button w3-grey w3-mobile">Delete</button>
         </form>
         </td>
         </tr>

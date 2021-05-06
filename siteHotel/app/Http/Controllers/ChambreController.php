@@ -12,6 +12,8 @@ class ChambreController extends Controller
     {
         $this->middleware('auth');
     }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -19,7 +21,16 @@ class ChambreController extends Controller
      */
     public function index()
     {
-        //
+        /* return view('layouts.home'); */
+        $chambres = \App\Models\Chambre::all(); //latest()->paginate(5);
+
+        //return view('layouts/home', compact('chambres'))
+        //->with('i', (request()->input('page', 1) - 1) * 5)
+        //;
+
+        return view('layouts.home', array(
+            'chambres' => $chambres
+        ));
     }
 
     /**
@@ -30,6 +41,7 @@ class ChambreController extends Controller
     public function create()
     {
         //
+        return view('layouts.create');
     }
 
     /**
@@ -41,6 +53,18 @@ class ChambreController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'taille' => 'required',
+            'prix' => 'required',
+            'nombre_de_lit' => 'required',
+            'type_de_lit' => 'required',
+            'balcon' => 'required',
+        ]);
+
+        Chambre::create($request->all());
+
+        return redirect()->route('layouts.index')
+            ->with('success', 'chambre created successfully.');
     }
 
     /**
@@ -68,6 +92,9 @@ class ChambreController extends Controller
     public function edit(Chambre $chambre)
     {
         //
+        //print_r($chambre); die;
+        return view('layouts.edit', compact('chambre'));
+        //return view('layouts.edit');
     }
 
     /**
@@ -80,6 +107,18 @@ class ChambreController extends Controller
     public function update(Request $request, Chambre $chambre)
     {
         //
+        $request->validate([
+            'taille' => 'required',
+            'prix' => 'required',
+            'nombre_de_lit' => 'required',
+            'type_de_lit' => 'required',
+            'balcon' => 'required',
+        ]);
+
+        $chambre->update($request->all());
+
+        return redirect()->route('layouts.index')
+            ->with('success', 'chambre updated successfully');
     }
 
     /**
@@ -91,5 +130,9 @@ class ChambreController extends Controller
     public function destroy(Chambre $chambre)
     {
         //
+        $chambre->delete();
+
+        return redirect()->route('layouts.index')
+            ->with('success', 'chambre deleted successfully');
     }
 }

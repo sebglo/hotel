@@ -1,30 +1,28 @@
-@extends('layouts.app')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div class="row">
 <div class="col-lg-12 margin-tb">
 <div class="pull-left">
 <h2>Add New Product</h2>
 </div>
 <div class="pull-right">
-<a class="btn btn-primary" href="{{ route('layouts.index') }}"> Back</a>
+<a class="btn btn-primary" href="<?php echo e(route('layouts.index')); ?>"> Back</a>
 </div>
 </div>
 </div>
 
-@if ($errors->any())
+<?php if($errors->any()): ?>
 <div class="alert alert-danger">
 <strong>Whoops!</strong> There were some problems with your input.<br><br>
 <ul>
-@foreach ($errors->all() as $error)
-<li>{{ $error }}</li>
-@endforeach
+<?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+<li><?php echo e($error); ?></li>
+<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 </ul>
 </div>
-@endif
+<?php endif; ?>
 
-<form action="{{ route('layouts.store') }}" method="POST">
-@csrf
+<form action="<?php echo e(route('layouts.store')); ?>" method="POST">
+<?php echo csrf_field(); ?>
 
 <div class="row">
 <div class="col-xs-12 col-sm-12 col-md-12">
@@ -44,4 +42,6 @@
 </div>
 </div>
 </form>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/sebastien/projetfinAnnee/hotel/siteHotel/resources/views/layouts/create.blade.php ENDPATH**/ ?>

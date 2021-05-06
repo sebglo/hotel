@@ -1,43 +1,41 @@
-@extends('layouts.app')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div class="row">
 <div class="col-lg-12 margin-tb">
 <div class="pull-left">
 <h2>Edit Product</h2>
 </div>
 <div class="pull-right">
-<a class="btn btn-primary" href="{{ route('layouts.index') }}"> Back</a>
+<a class="btn btn-primary" href="<?php echo e(route('layouts.index')); ?>"> Back</a>
 </div>
 </div>
 </div>
 
-@if ($errors->any())
+<?php if($errors->any()): ?>
 <div class="alert alert-danger">
 <strong>Whoops!</strong> There were some problems with your input.<br><br>
 <ul>
-@foreach ($errors->all() as $error)
-<li>{{ $error }}</li>
-@endforeach
+<?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+<li><?php echo e($error); ?></li>
+<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 </ul>
 </div>
-@endif
+<?php endif; ?>
 
 <?php print_r($chambre); //die; ?>
-<form action="{{ route('layouts.update',$chambre->id) }}" method="POST">
-@csrf
-@method('PUT')
+<form action="<?php echo e(route('layouts.update',$chambre->id)); ?>" method="POST">
+<?php echo csrf_field(); ?>
+<?php echo method_field('PUT'); ?>
 <div class="row">
 <div class="col-xs-12 col-sm-12 col-md-12">
 <div class="form-group">
 <strong>Title:</strong>
-<input type="text" name="title" value="{{ $chambre->taille }}" class="form-control" placeholder="Title">
+<input type="text" name="title" value="<?php echo e($chambre->taille); ?>" class="form-control" placeholder="Title">
 </div>
 </div>
 <div class="col-xs-12 col-sm-12 col-md-12">
 <div class="form-group">
 <strong>Description:</strong>
-<textarea class="form-control" style="height:150px" name="description" placeholder="Detail">texte{{-- {{ $chambre->id }} --}}</textarea>
+<textarea class="form-control" style="height:150px" name="description" placeholder="Detail">texte</textarea>
 </div>
 </div>
 <div class="col-xs-12 col-sm-12 col-md-12 text-center">
@@ -75,4 +73,6 @@
     </form>
 </div>
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/sebastien/projetfinAnnee/hotel/siteHotel/resources/views/layouts/edit.blade.php ENDPATH**/ ?>

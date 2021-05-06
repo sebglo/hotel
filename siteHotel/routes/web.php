@@ -22,7 +22,9 @@ Route::get('/single', [PagesController::class, 'single']);
 
 use App\Http\Controllers\ChambreController;
 Route::resource('chambre', ChambreController::class);
-Route::get('/home', [ChambreController::class, 'index']);
+use App\Http\Controllers\Homegit Controller;
+Route::resource('home', HomeController::class);
+//Route::get('/home', [ChambreController::class, 'index']);
 
 
 Auth::routes();

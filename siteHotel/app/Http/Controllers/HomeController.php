@@ -2,36 +2,97 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Chambre;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     /**
-     * Create a new controller instance.
+     * Display a listing of the resource.
      *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        /* return view('layouts.home'); */
-        $chambres = \App\Models\Chambre::all();//latest()->paginate(5);
+        //
+        $chambres = Chambre::all();
 
-        //return view('layouts/home', compact('chambres'))
-            //->with('i', (request()->input('page', 1) - 1) * 5)
-            //;
-
-            return view('layouts.home',array(
+        return view(
+            'LayoutPublic.listSimple',
+            [
                 'chambres' => $chambres
-            ));
+            ]
+        );
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Chambre  $chambre
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $single_chambre= Chambre::find($id);
+        return view('LayoutPublic.singleRoom',
+        [
+            'chambre' => $single_chambre
+        ]);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Chambre  $chambre
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Chambre $chambre)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Chambre  $chambre
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Chambre $chambre)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Chambre  $chambre
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Chambre $chambre)
+    {
+        //
     }
 }

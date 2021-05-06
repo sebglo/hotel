@@ -16,6 +16,7 @@ class ReservationController extends Controller
     public function index()
     {
         //
+        
 
     }
 
@@ -48,12 +49,7 @@ class ReservationController extends Controller
      */
     public function show(Reservation $reservation)
     {
-        //
-       /*  $chambre = Chambre::where('id', $reservation)->first();
-        return view('LayoutPublic.singleRoom',
-       [
-           'single' => $chambre
-       ]); */
+
     }
 
     /**

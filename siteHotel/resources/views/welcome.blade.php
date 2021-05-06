@@ -45,9 +45,7 @@
                     </div>
             @endif
         </div>
-        <div class="w3-bar w3-white w3-large w3-padding-32">
 
-        </div>
     </div>
     <div class="">
         @yield('content')

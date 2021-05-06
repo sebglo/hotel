@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Reservation;
 use Illuminate\Http\Request;
 use App\Models\Chambre;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class ReservationController extends Controller
@@ -17,8 +18,24 @@ class ReservationController extends Controller
     public function index()
     {
         //
+        //$id = Auth::id();
+       /* $id = Auth::user()->id; */
 
 
+        /* $reservations = Reservation::where('user_id', $id)->get(); */
+
+        //dd($reservations);
+
+        if (auth()->check()) {
+            return view(
+                'LayoutPublic.reservation.index',
+
+                [
+                    'reservations' => Auth::user()->reservations
+
+                ]
+            );
+        }
     }
 
     /**
@@ -40,8 +57,8 @@ class ReservationController extends Controller
     public function store(Request $request)
     {
         //
-        // $id = Auth::id();
-        if (auth()->check()) {
+        /* $id = Auth::id();
+        if (auth()->check()) { */
 
             Auth::user();
             $reservation =  new Reservation();
@@ -53,8 +70,8 @@ class ReservationController extends Controller
 
             $reservation->save();
 
-            /*    Reservation::create(request()->validate([
-            'user_id' => $id,
+        /* Reservation::create(request()->validate([
+            'user_id' => 'required|in:' . $id,
             'chambre_id' => 'required',
             'date_debut' => 'required',
             'date_fin' => 'required',
@@ -63,10 +80,10 @@ class ReservationController extends Controller
         ])); */
 
 
-            return redirect('/home');
-        }
+        return redirect('/home');
+        /*}
 
-        return view('auth.login');
+        return view('auth.login'); */
     }
 
     /**

@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Chambre;
+use App\Models\User;
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -17,10 +20,14 @@ class HomeController extends Controller
         //
         $chambres = Chambre::all();
 
+        $aut = Auth::user()->id;
+        $user = User::where('id', $aut);
+
         return view(
             'LayoutPublic.listSimple',
             [
-                'chambres' => $chambres
+                'chambres' => $chambres,
+                'user' => $user
             ]
         );
     }
@@ -55,11 +62,13 @@ class HomeController extends Controller
      */
     public function show($id)
     {
-        $single_chambre= Chambre::find($id);
-        return view('LayoutPublic.singleRoom',
-        [
-            'chambre' => $single_chambre
-        ]);
+        $single_chambre = Chambre::find($id);
+        return view(
+            'LayoutPublic.singleRoom',
+            [
+                'chambre' => $single_chambre
+            ]
+        );
     }
 
     /**

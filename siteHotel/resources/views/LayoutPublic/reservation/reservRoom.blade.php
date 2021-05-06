@@ -1,3 +1,5 @@
+@auth
+
 <div class="w3-container w3-padding l6 m8">
     <div class="w3-container w3-red">
         <h2><i class="fa fa-bed w3-margin-right"></i>Formulaire de reservation</h2>
@@ -41,4 +43,19 @@
         </form>
     </div>
 </div>
+
+@endauth
+
+
+@guest
+<div class="w3-container w3-padding l6 m8">
+    <div class="w3-container w3-red">
+        <h2><i class="fa fa-bed w3-margin-right"></i>Formulaire de reservation</h2>
+    </div>
+    <div class="w3-container w3-white w3-padding-16">
+        <h3>Veuillez vous connecter pour reserver</h3>
+    </div>
+</div>
+
+@endguest
 < {{-- </header> --}}

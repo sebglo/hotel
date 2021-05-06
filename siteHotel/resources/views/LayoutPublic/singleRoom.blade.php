@@ -1,5 +1,3 @@
-
-
 @extends('welcome')
 
 
@@ -18,7 +16,7 @@
         <h6 class="w3-opacity"> {{$chambre->nombre_de_lit }} lits</h6>
 
         <p> {{$chambre->taille}} <sup>m2</sup></p>
-        <p> Balcon :  {{$chambre->balcon}} </p>
+        <p> Balcon : {{$chambre->balcon}} </p>
         <p class="w3-large"><i class="fa fa-bath"></i> <i class="fa fa-phone"></i> <i class="fa fa-wifi"></i>
         </p>
 
@@ -29,6 +27,6 @@
 
 
 
-@include('LayoutPublic.reservation.reservRoom')
-
-@endsection
+    @include('LayoutPublic.reservation.reservRoom')
+    
+    @endsection

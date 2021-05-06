@@ -32,10 +32,19 @@
                         <i class="fa fa-bed w3-margin-right"></i>Accueil</a>
                     {{-- <a href="/reserve" class="w3-bar-item w3-button w3-mobile">Réserver</a> --}}
                     <a href="/contact" class="w3-bar-item w3-button w3-mobile">Contact</a>
+                    <a href="/reservation" class="w3-bar-item w3-button w3-mobile">Mes reservation</a>
+
+
                     <div class="hidden fixed top-0 right-0 sm:block">
+
+
                         @auth
-                            <a href="{{ url('/home') }}" class="w3-bar-item w3-button w3-mobile">Administration</a>
-                        @else
+                        {{-- @if($user->role_as = 1) --}}
+                            <a href="{{ url('/admin') }}" class="w3-bar-item w3-button w3-mobile">Administration</a>
+
+{{--                             @endif
+ --}}
+                            @else
                             <a href="{{ route('login') }}" class="w3-bar-item w3-button w3-mobile">Log in</a>
 
                             @if (Route::has('register'))

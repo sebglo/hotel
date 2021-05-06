@@ -21,7 +21,11 @@ Route::get('/contact', [PagesController::class, 'contact']);
 Route::get('/single', [PagesController::class, 'single']);
 
 use App\Http\Controllers\ChambreController;
+use App\Models\Chambre;
+
 Route::resource('chambre', ChambreController::class);
+Route::get('/admin', [ChambreController::class, 'index']);
+
 use App\Http\Controllers\HomeController;
 Route::resource('home', HomeController::class);
 //Route::get('/home', [ChambreController::class, 'index']);
@@ -31,5 +35,7 @@ Auth::routes();
 
 
 use App\Http\Controllers\ReservationController;
-Route::resource('/reservation', ReservationController::class);
+//use App\Models\Reservation;
 
+Route::resource('/reservation', ReservationController::class);
+//Route::get('/reservation', [ReservationController::class, 'index']);

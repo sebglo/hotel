@@ -29,7 +29,7 @@
                     <a href="/contact" class="w3-bar-item w3-button w3-mobile">Contact</a>
                     <div class="hidden fixed top-0 right-0 sm:block">
                     @auth
-                        <a href="{{ url('/home') }}" class="w3-bar-item w3-button w3-mobile">Administration</a>
+                        <a href="{{ url('/admin') }}" class="w3-bar-item w3-button w3-mobile">Administration</a>
                     @else
                         <a href="{{ route('login') }}" class="w3-bar-item w3-button w3-mobile">Log in</a>
 

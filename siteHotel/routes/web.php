@@ -22,7 +22,7 @@ Route::get('/single', [PagesController::class, 'single']);
 
 use App\Http\Controllers\ChambreController;
 Route::resource('chambre', ChambreController::class);
-Route::get('/home', [ChambreController::class, 'index']);
+Route::get('/admin', [ChambreController::class, 'index']);
 
 
 Auth::routes();

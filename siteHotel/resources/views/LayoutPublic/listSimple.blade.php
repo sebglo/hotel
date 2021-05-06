@@ -6,14 +6,11 @@
 
 
     <div class="w3-content" style="max-width:1532px;">
-        <div class="">
+        <div class="container">
 
             @foreach ($chambres as $chambre)
-            <div class="row flex-wrap">
-                <div class="col-md-3">
-
-
-
+                <div class="container row flex-wrap">
+                    <div class="col-md-3">
                         <div class="w3-row-padding w3-padding-16">
                             <div class="w3-third w3-margin-bottom">
                                 <img src="../../images/room_single.jpg" alt="Norway" style="width:100%">
@@ -31,7 +28,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             @endforeach
 

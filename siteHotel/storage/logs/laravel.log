@@ -25809,3 +25809,33 @@
 #25 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle()
 #26 {main}
 "} 
+[2021-05-06 11:37:31] local.ERROR: syntax error, unexpected '<<' (T_SL), expecting end of file {"exception":"[object] (ParseError(code: 0): syntax error, unexpected '<<' (T_SL), expecting end of file at /home/alex/Handigital/Laravel/hotel/siteHotel/routes/web.php:25)
+[stacktrace]
+#0 /home/alex/Handigital/Laravel/hotel/siteHotel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(425): Illuminate\\Routing\\RouteFileRegistrar->register()
+#1 /home/alex/Handigital/Laravel/hotel/siteHotel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(382): Illuminate\\Routing\\Router->loadRoutes()
+#2 /home/alex/Handigital/Laravel/hotel/siteHotel/vendor/laravel/framework/src/Illuminate/Routing/RouteRegistrar.php(135): Illuminate\\Routing\\Router->group()
+#3 /home/alex/Handigital/Laravel/hotel/siteHotel/app/Providers/RouteServiceProvider.php(48): Illuminate\\Routing\\RouteRegistrar->group()
+#4 /home/alex/Handigital/Laravel/hotel/siteHotel/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): App\\Providers\\RouteServiceProvider->App\\Providers\\{closure}()
+#5 /home/alex/Handigital/Laravel/hotel/siteHotel/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#6 /home/alex/Handigital/Laravel/hotel/siteHotel/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(81): Illuminate\\Container\\Util::unwrapIfClosure()
+#7 /home/alex/Handigital/Laravel/hotel/siteHotel/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#8 /home/alex/Handigital/Laravel/hotel/siteHotel/vendor/laravel/framework/src/Illuminate/Container/Container.php(611): Illuminate\\Container\\BoundMethod::call()
+#9 /home/alex/Handigital/Laravel/hotel/siteHotel/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(120): Illuminate\\Container\\Container->call()
+#10 /home/alex/Handigital/Laravel/hotel/siteHotel/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php(45): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->loadRoutes()
+#11 /home/alex/Handigital/Laravel/hotel/siteHotel/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->Illuminate\\Foundation\\Support\\Providers\\{closure}()
+#12 /home/alex/Handigital/Laravel/hotel/siteHotel/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#13 /home/alex/Handigital/Laravel/hotel/siteHotel/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(81): Illuminate\\Container\\Util::unwrapIfClosure()
+#14 /home/alex/Handigital/Laravel/hotel/siteHotel/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#15 /home/alex/Handigital/Laravel/hotel/siteHotel/vendor/laravel/framework/src/Illuminate/Container/Container.php(611): Illuminate\\Container\\BoundMethod::call()
+#16 /home/alex/Handigital/Laravel/hotel/siteHotel/vendor/laravel/framework/src/Illuminate/Support/ServiceProvider.php(113): Illuminate\\Container\\Container->call()
+#17 /home/alex/Handigital/Laravel/hotel/siteHotel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(917): Illuminate\\Support\\ServiceProvider->callBootedCallbacks()
+#18 /home/alex/Handigital/Laravel/hotel/siteHotel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(895): Illuminate\\Foundation\\Application->bootProvider()
+#19 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}()
+#20 /home/alex/Handigital/Laravel/hotel/siteHotel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(896): array_walk()
+#21 /home/alex/Handigital/Laravel/hotel/siteHotel/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#22 /home/alex/Handigital/Laravel/hotel/siteHotel/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(237): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap()
+#23 /home/alex/Handigital/Laravel/hotel/siteHotel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(310): Illuminate\\Foundation\\Application->bootstrapWith()
+#24 /home/alex/Handigital/Laravel/hotel/siteHotel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#25 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle()
+#26 {main}
+"} 

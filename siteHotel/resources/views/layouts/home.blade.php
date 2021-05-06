@@ -21,15 +21,16 @@
     </div>
 </div>
 
-<div class="container">
-    <a class="w3-bar-item w3-button w3-red w3-mobile" href="{{-- {{ route('layouts.create') }} --}}">Entrer une nouvelle chambre</a>
+<div class="container w3-padding-16">
+    <a class="w3-bar-item w3-button w3-red w3-mobile" href="{{ route('chambre.create') }}">Entrer une nouvelle chambre</a><br>
 </div>
 
 <div class="container">
 
     <table class="table table-bordered">
-        <tr>
+        <tr class="w3-bar-item w3-red">
         <th>No</th>
+        <th>Prix</th>
         <th>taille</th>
         <th>nbx de lit</th>
         <th>type de lit</th>
@@ -41,18 +42,18 @@
         @foreach ($chambres as $chambre)
         {{-- Auth::ChambreController()->index  --}}
         <tr>
-        <td>{{ $chambre->id }}</td>
-        <td>{{ $chambre->taille }}</td>
-        <td>{{ $chambre->nombre_de_lit }}</td>
-        <td>{{ $chambre->type_de_lit }}</td>
-        <td>{{ $chambre->balcon }}</td>
-        <td>
-        <form action="{{ route('layouts.destroy',$chambre->id) }}" method="POST">
-        <a class="btn btn-info" href="{{ route('layouts.show',$chambre->id) }}">Show</a>
-        <a class="btn btn-primary" href="{{ route('layouts.edit',$chambre->id) }}">Edit</a>
+        <td class="w3-padding-16 w3-border">{{ $chambre->id }}</td>
+        <td class="w3-padding-16 w3-border">{{ $chambre->prix }}</td>
+        <td class="w3-padding-16 w3-border">{{ $chambre->taille }}</td>
+        <td class="w3-padding-16 w3-border">{{ $chambre->nombre_de_lit }}</td>
+        <td class="w3-padding-16 w3-border">{{ $chambre->type_de_lit }}</td>
+        <td class="w3-padding-16 w3-border">{{ $chambre->balcon }}</td>
+        <td class="w3-padding-16 w3-border">
+        <form action="{{ route('chambre.destroy',$chambre->id) }}" method="POST">
+        <a class="w3-bar-item w3-button w3-grey w3-mobile" href="{{ route('chambre.edit',$chambre->id) }}">Edit</a>
         @csrf
         @method('DELETE')
-        <button type="submit" class="btn btn-danger">Delete</button>
+        <button type="submit" class="w3-bar-item w3-button w3-grey w3-mobile">Delete</button>
         </form>
         </td>
         </tr>

@@ -68,6 +68,8 @@ class ReservationController extends Controller
             $reservation->date_fin = $request->get('date_fin');
             $reservation->nombre_de_personne = $request->get('nombre_de_personne');
 
+
+
             $reservation->save();
 
         /* Reservation::create(request()->validate([
@@ -128,5 +130,8 @@ class ReservationController extends Controller
     public function destroy(Reservation $reservation)
     {
         //
+        $reservation->delete();
+
+        return redirect('/reservation');
     }
 }

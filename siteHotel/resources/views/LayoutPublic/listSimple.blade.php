@@ -35,141 +35,52 @@
             </ul>
         </div>
 
-
-        {{-- <table>
-            <thead>
-                <tr>
-                    <th colspan="2">The table header</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>The table body</td>
-                    <td>with two columns</td>
-                </tr>
-            </tbody>
-        </table> --}}
-
-
-        {{-- <div class="box">Box 1</div>
-	<div class="box">Box 2</div>
-	<div class="box">Box 3</div>
-	<div class="box">Box 4</div> --}}
-
-        {{-- <div class="w3-row-padding w3-section w3-stretch">
-            <div class="w3-col s4">
-                <img src="img_nature_wide.jpg" style="width:100%">
-            </div>
-            <div class="w3-col s4">
-                <img src="img_snow_wide.jpg" style="width:100%">
-            </div>
-            <div class="w3-col s4">
-                <img src="img_mountains_wide.jpg" style="width:100%">
-            </div>
-        </div> --}}
-
-        {{-- <div class="col-md-3">
-            @foreach ($chambres as $chambre)
-                <div class="">
-                    <div class="">
-                        <div class="w3-row-padding w3-padding-16">
-                            <div class="w3-third w3-margin-bottom">
-                                <img src="../../images/room_single.jpg" alt="Norway" style="width:100%">
-                                <h3> {{ $chambre->prix }} $ </h3>
-                                <h6 class="w3-opacity"> {{ $chambre->nombre_de_lit }} lits</h6>
-
-                                <p> {{ $chambre->taille }} <sup>m2</sup></p>
-                                <p class="w3-large"><i class="fa fa-bath"></i> <i class="fa fa-phone"></i> <i
-                                        class="fa fa-wifi"></i>
-                                </p> --}}
-        {{-- <a href="/reservation/{{$chambre->id}}"> --}}
-        {{-- <a href="{{ URL::to('home/' . $chambre->id) }}">
-                                    <button class="w3-button w3-block w3-black w3-margin-bottom">Reserver</button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-            @endforeach
-        </div> --}}
-
-
-        {{-- <div class="w3-third w3-margin-bottom">
-                <img src="../../images/room_double.jpg" alt="Norway" style="width:100%">
-                <div class="w3-container w3-white">
-                    <h3>Double Room</h3>
-                    <h6 class="w3-opacity">From $149</h6>
-                    <p>Queen-size bed</p>
-                    <p>25m<sup>2</sup></p>
-                    <p class="w3-large"><i class="fa fa-bath"></i> <i class="fa fa-phone"></i> <i class="fa fa-wifi"></i> <i
-                            class="fa fa-tv"></i></p>
-                    <a href="/single">
-                        <button class="w3-button w3-block w3-black w3-margin-bottom">Choose Room</button>
-                    </a>
-                </div>
-            </div>
-            <div class="w3-third w3-margin-bottom">
-                <img src="../../images/room_deluxe.jpg" alt="Norway" style="width:100%">
-                <div class="w3-container w3-white">
-                    <h3>Deluxe Room</h3>
-                    <h6 class="w3-opacity">From $199</h6>
-                    <p>King-size bed</p>
-                    <p>40m<sup>2</sup></p>
-                    <p class="w3-large"><i class="fa fa-bath"></i> <i class="fa fa-phone"></i> <i class="fa fa-wifi"></i> <i
-                            class="fa fa-tv"></i> <i class="fa fa-glass"></i> <i class="fa fa-cutlery"></i></p>
-                    <a href="/single">
-                        <button class="w3-button w3-block w3-black w3-margin-bottom">Choose Room</button>
-                    </a>
-                </div>
-            </div>
-        </div> --}}
-
         <div class="w3-row-padding w3-large w3-center" style="margin:32px 0">
             <div class="w3-third"><i class="fa fa-map-marker w3-text-red"></i> 423 Some adr, Chicago, US</div>
             <div class="w3-third"><i class="fa fa-phone w3-text-red"></i> Phone: +00 151515</div>
             <div class="w3-third"><i class="fa fa-envelope w3-text-red"></i> Email: mail@mail.com</div>
         </div>
-
-        {{-- enplacement du plan --}}
-        <div class="">
-            <div id="map"></div>
-
-        </div>
-        {{-- enplacement du plan 2--}}
+        <h4>Localitation GPS</h4>
+        {{-- enplacement point localisation --}}
         <div id="infoposition"></div>
+        {{-- emplacement carte google --}}
+        <div id="googleMap" style="width:100%;height:400px;"></div>
+
+    </div>
+
+    <div class="w3-panel w3-red w3-leftbar w3-padding-32">
+        <h6><i class="fa fa-info w3-deep-orange w3-padding w3-margin-right"></i> Emplacement pour les futures publicités
+        </h6>
+    </div>
+
+    <script>
+        //function pour l'API la localisation GPS
+        function maPosition(position) {
+            var infopos = "Position déterminée :\n";
+            infopos += "Latitude : " + position.coords.latitude + "\n";
+            infopos += "Longitude: " + position.coords.longitude + "\n";
+            infopos += "Altitude : " + position.coords.altitude + "\n";
+            document.getElementById("infoposition").innerHTML = infopos;
+        }
+
+        if (navigator.geolocation)
+            navigator.geolocation.getCurrentPosition(maPosition);
 
 
-        <div class="w3-panel w3-red w3-leftbar w3-padding-32">
-            <h6><i class="fa fa-info w3-deep-orange w3-padding w3-margin-right"></i> Emplacement pour les futures publicités
-            </h6>
-        </div>
-
-        {{-- chargement de l'API --}}
-        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=set_to_true_or_false"></script>
-
-        {{-- le javascript de l'api --}}
-        <script>
-            // Position par défaut (Châtelet à Paris)
-            var centerpos = new google.maps.LatLng(48.579400, 7.7519);
-
-            // Options relatives à la carte
-            var optionsGmaps = {
-                center: centerpos,
-                mapTypeId: google.maps.MapTypeId.ROADMAP,
-                zoom: 15
+        //fonction pour l'API google
+        function myMap() {
+            var mapProp = {
+                center: new google.maps.LatLng(45.187072, 5.708185599999999),
+                zoom: 5,
             };
-            // ROADMAP peut être remplacé par SATELLITE, HYBRID ou TERRAIN
-            // Zoom : 0 = terre entière, 19 = au niveau de la rue
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+        }
 
-            // Initialisation de la carte pour l'élément portant l'id "map"
-            var map = new google.maps.Map(document.getElementById("map"), optionsGmaps);
+    </script>
 
-            // .. et la variable qui va stocker les coordonnées
-            var latlng;
-
-        </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQu_MVauKqB04Kv0EQ3YcJNe3BSbj3F0E&callback=myMap">
+    </script>
 
 
 
-
-
-    @endsection
+@endsection

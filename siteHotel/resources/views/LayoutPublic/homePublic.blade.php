@@ -49,7 +49,7 @@
 
 
     <!-- Footer -->
-    <{{-- footer class="w3-padding-32 w3-black w3-center w3-margin-top">
+    {{-- footer class="w3-padding-32 w3-black w3-center w3-margin-top">
         <h5>Find Us On</h5>
         <div class="w3-xlarge w3-padding-16">
             <i class="fa fa-facebook-official w3-hover-opacity"></i>
@@ -62,32 +62,7 @@
 
     </footer> --}}
 
-    <!-- Add Google Maps -->
-    <script>
-        function myMap() {
-            myCenter = new google.maps.LatLng(41.878114, -87.629798);
-            var mapOptions = {
-                center: myCenter,
-                zoom: 12,
-                scrollwheel: false,
-                draggable: false,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            };
-            var map = new google.maps.Map(document.getElementById("googleMap"), mapOptions);
 
-            var marker = new google.maps.Marker({
-                position: myCenter,
-            });
-            marker.setMap(map);
-        }
-
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap">
-    </script>
-    <!--
-To use this code on your website, get a free API key from Google.
-Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
--->
 
 </body>
 

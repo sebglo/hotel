@@ -77,54 +77,11 @@
                 class="w3-hover-text-green">w3.css</a></p>
     </footer> --}}
 
-    <!-- Add Google Maps -->
-    <script>
-        function myMap() {
-            myCenter = new google.maps.LatLng(41.878114, -87.629798);
-            var mapOptions = {
-                center: myCenter,
-                zoom: 12,
-                scrollwheel: false,
-                draggable: false,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            };
-            var map = new google.maps.Map(document.getElementById("googleMap"), mapOptions);
-
-            var marker = new google.maps.Marker({
-                position: myCenter,
-            });
-            marker.setMap(map);
-        }
-
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap">
-    </script>
 
 
 
-    <script>
-        var unirest = require("unirest");
-
-        var req = unirest("GET", "https://devru-latitude-longitude-find-v1.p.rapidapi.com/latlon.php");
-
-        req.query({
-            "location": "chicago"
-        });
-
-        req.headers({
-            "x-rapidapi-key": "742028b9e1msh204dd2a3f81e614p1b2fc3jsn7797045b3557",
-            "x-rapidapi-host": "devru-latitude-longitude-find-v1.p.rapidapi.com",
-            "useQueryString": true
-        });
 
 
-        req.end(function(res) {
-            if (res.error) throw new Error(res.error);
-
-            console.log(res.body);
-        });
-
-    </script>
     <!--
 To use this code on your website, get a free API key from Google.
 Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp

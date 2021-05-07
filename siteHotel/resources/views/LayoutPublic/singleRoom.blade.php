@@ -5,7 +5,7 @@
 @section('content')
 <div class="w3-content" style="max-width:1532px;">
 
-
+    <div class="w3-container w3-white w3-margin-top">
 
 
     <h1>Chambre en detail</h1>
@@ -28,5 +28,5 @@
 
 
     @include('LayoutPublic.reservation.reservRoom')
-    
+
     @endsection

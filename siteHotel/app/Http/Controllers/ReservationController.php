@@ -96,6 +96,7 @@ class ReservationController extends Controller
      */
     public function show(Reservation $reservation)
     {
+        
     }
 
     /**
@@ -107,6 +108,9 @@ class ReservationController extends Controller
     public function edit(Reservation $reservation)
     {
         //
+        return view('LayoutPublic.reservation.edit', [
+            'reservation' => $reservation
+        ]);
     }
 
     /**
@@ -119,6 +123,19 @@ class ReservationController extends Controller
     public function update(Request $request, Reservation $reservation)
     {
         //
+        $request->validate([
+
+            'date_debut' => 'required',
+            'date_fin' => 'required',
+            'nombre_de_personne' => 'required',
+
+
+        ]);
+
+
+        $reservation->update($request->all());
+
+        return redirect('/reservation');
     }
 
     /**

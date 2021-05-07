@@ -3,7 +3,8 @@
 
 @section('content')
     <div class="w3-content" style="max-width:1532px;">
-        <div class="w3-container" id="contact">
+        <div class="w3-container w3-white w3-margin-top"" id="contact">
+
             <h2>Contact</h2>
             <p>If you have any questions, do not hesitate to ask them.</p>
             <i class="fa fa-map-marker w3-text-red" style="width:30px"></i> Chicago, US<br>

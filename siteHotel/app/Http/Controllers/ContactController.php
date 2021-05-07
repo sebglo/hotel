@@ -15,6 +15,7 @@ class ContactController extends Controller
     public function index()
     {
         //
+        return view('LayoutPublic.contact');
     }
 
     /**
@@ -36,6 +37,13 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         //
+        Contact::create(request()->validate([
+            'name' => 'required|min:2|max:20',
+            'email' => 'required|email',
+            'message' => 'required|max:255'
+        ]));
+
+        return redirect('/')->with('success', 'Nous avons bien reçu votre message, merci de nous avoir contactez.');
     }
 
     /**

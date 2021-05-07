@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 Route::get('/', [PagesController::class, 'index']);
 Route::get('/reserve', [PagesController::class, 'reserve']);
-Route::get('/contact', [PagesController::class, 'contact']);
+//Route::get('/contact', [PagesController::class, 'contact']);
 Route::get('/single', [PagesController::class, 'single']);
 
 use App\Http\Controllers\ChambreController;
@@ -39,3 +39,8 @@ use App\Http\Controllers\ReservationController;
 
 Route::resource('/reservation', ReservationController::class);
 //Route::get('/reservation', [ReservationController::class, 'index']);
+
+
+
+use App\Http\Controllers\ContactController;
+Route::resource('/contact', ContactController::class);

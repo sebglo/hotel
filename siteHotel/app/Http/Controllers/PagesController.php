@@ -10,7 +10,8 @@ class PagesController extends Controller
     //
     public function index()
     {
-        $chambres = Chambre::all();
+        // $chambres = Chambre::all();
+        $chambres = Chambre::latest()->paginate(3);
 
         return view(
             'LayoutPublic.listSimple',
@@ -18,6 +19,8 @@ class PagesController extends Controller
                 'chambres' => $chambres
             ]
         );
+
+
     }
 
     public function contact()

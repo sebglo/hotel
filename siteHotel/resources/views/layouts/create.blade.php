@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class="row">
         <div class="col-lg-2">
             {{-- colone 1 --}}
@@ -81,5 +82,6 @@
             {{-- colone 3 --}}
         </div>
     </div>
+
 
 @endsection

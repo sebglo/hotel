@@ -78,9 +78,67 @@
 
     </script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQu_MVauKqB04Kv0EQ3YcJNe3BSbj3F0E&callback=myMap">
-    </script>
+    {{-- <script>
+    //function pour l'API la localisation GPS
+//     function maPosition(position) {
+//         /* var infopos = position.coords.latitude +", "+ position.coords.longitude; */
+//         var infopos = position.coords.latitude;
+//         var infopo = position.coords.longitude;
+
+//         document.getElementById("infoposition").innerHTML = infopo", " infopos;
+//     }
+
+//    if (navigator.geolocation)
+//         navigator.geolocation.getCurrentPosition(maPosition);
+
+
+    //fonction pour l'API google
+    function myMap() {
+
+        var infopos = position.coords.latitude +", "+ position.coords.longitude;
+
+        if (navigator.geolocation)
+        navigator.geolocation.getCurrentPosition(infopos);
+
+        var mapProp = {
+            center: new google.maps.LatLng(infopos),
+            zoom: 5,
+        };
+        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+    }
+
+</script> --}}
+{{-- <script>
+        //function pour l'API la localisation GPS
+        function maPosition1(position) {
+        var infopos = position.coords.latitude;
+        //document.getElementById("infoposition").innerHTML = infopos;
+        }
+
+        function maPosition2(position) {
+        var infopos = position.coords.longitude;
+        //document.getElementById("infoposition").innerHTML = infopos;
+        }
+
+        if (navigator.geolocation)
+        var nav1 = navigator.geolocation.getCurrentPosition(maPosition1);
+        var nav2 = navigator.geolocation.getCurrentPosition(maPosition2);
+
+
+        //fonction pour l'API google
+        function myMap() {
+        var mapProp = {
+        center: new google.maps.LatLng(nav1, nav2),
+        zoom: 5,
+        };
+        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+        }
+
+        </script> --}}
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQu_MVauKqB04Kv0EQ3YcJNe3BSbj3F0E&callback=myMap">
+        </script>
 
 
 
-@endsection
+    @endsection

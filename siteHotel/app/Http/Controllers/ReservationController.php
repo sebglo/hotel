@@ -82,7 +82,7 @@ class ReservationController extends Controller
         ])); */
 
 
-        return redirect('/home');
+        return redirect('/reservation');
         /*}
 
         return view('auth.login'); */
@@ -96,7 +96,7 @@ class ReservationController extends Controller
      */
     public function show(Reservation $reservation)
     {
-        
+
     }
 
     /**

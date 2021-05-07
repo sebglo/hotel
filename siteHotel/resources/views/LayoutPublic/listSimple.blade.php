@@ -35,35 +35,26 @@
             </ul>
         </div>
 
-
-
-
         <div class="w3-row-padding w3-large w3-center" style="margin:32px 0">
             <div class="w3-third"><i class="fa fa-map-marker w3-text-red"></i> 423 Some adr, Chicago, US</div>
             <div class="w3-third"><i class="fa fa-phone w3-text-red"></i> Phone: +00 151515</div>
             <div class="w3-third"><i class="fa fa-envelope w3-text-red"></i> Email: mail@mail.com</div>
         </div>
-
-        {{-- enplacement du plan --}}
-        <div class="">
-            <div id="map"></div>
-
-        </div>
-        {{-- enplacement du plan 2--}}
+        <h4>Localitation GPS</h4>
+        {{-- enplacement point localisation --}}
         <div id="infoposition"></div>
+        {{-- emplacement carte google --}}
+        <div id="googleMap" style="width:100%;height:400px;"></div>
 
+    </div>
 
-        <div class="w3-panel w3-red w3-leftbar w3-padding-32">
-            <h6><i class="fa fa-info w3-deep-orange w3-padding w3-margin-right"></i> Emplacement pour les futures publicités
-            </h6>
-        </div>
-
-
- <!-- Un élément HTML pour recueillir l’affichage -->
-    <!-- <div id="infoposition"></div> -->
-    <div id="mapholder"></div>
+    <div class="w3-panel w3-red w3-leftbar w3-padding-32">
+        <h6><i class="fa fa-info w3-deep-orange w3-padding w3-margin-right"></i> Emplacement pour les futures publicités
+        </h6>
+    </div>
 
     <script>
+        //function pour l'API la localisation GPS
         function maPosition(position) {
             var infopos = "Position déterminée :\n";
             infopos += "Latitude : " + position.coords.latitude + "\n";
@@ -74,20 +65,22 @@
 
         if (navigator.geolocation)
             navigator.geolocation.getCurrentPosition(maPosition);
-    </script>
 
-    <script>
-        function showPosition(position) {
-            var latlon = position.coords.latitude + "," + position.coords.longitude;
 
-            var img_url = "https://maps.googleapis.com/maps/api/staticmap?center=" + latlon + " & size = 400 x300 & sensor = false & key = YOUR_KEY ";
-
-            document.getElementById("mapholder").innerHTML = "<img src='" + img_url + "'>";
+        //fonction pour l'API google
+        function myMap() {
+            var mapProp = {
+                center: new google.maps.LatLng(45.187072, 5.708185599999999),
+                zoom: 5,
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
         }
-        showPosition(position);
+
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQu_MVauKqB04Kv0EQ3YcJNe3BSbj3F0E&callback=myMap">
     </script>
 
 
 
-
-    @endsection
+@endsection
